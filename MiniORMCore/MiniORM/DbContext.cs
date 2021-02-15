@@ -173,7 +173,12 @@ namespace MiniORM
 				mapRelationsGeneric.Invoke(this, new[] { dbSet });
 			}
 		}
+			   
+		private void MapRelations<TEntity>(DbSet<TEntity> dbSet)
+			where TEntity : class , new()
+		{
 
+		}
 		private void InitializeDbSets()
 		{
 			throw new NotImplementedException();
