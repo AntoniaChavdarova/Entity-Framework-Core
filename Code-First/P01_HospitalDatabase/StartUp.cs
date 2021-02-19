@@ -6,7 +6,7 @@ namespace P01_HospitalDatabase
     {
         static void Main(string[] args)
         {
-           
+            Console.WriteLine(Guid.NewGuid());
         }
     }
 }
