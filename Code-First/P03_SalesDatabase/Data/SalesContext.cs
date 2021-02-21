@@ -42,6 +42,23 @@ namespace P03_SalesDatabase.Data
                 .IsUnicode(false);
 
             });
+
+            modelBuilder.Entity<Product>(entity => {
+
+                entity.Property(x => x.Description)
+                .HasDefaultValue("No description");
+
+            });
+
+            modelBuilder.Entity<Sale>(entity => {
+
+                entity.Property(s => s.Date)
+                 .HasColumnType("DATETIME2")
+                .HasDefaultValueSql("GETDATE()");
+
+            });
+
+
         }
     }
 }

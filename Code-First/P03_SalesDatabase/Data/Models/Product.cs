@@ -20,6 +20,9 @@ namespace P03_SalesDatabase.Data.Models
 
         public double Quantity { get; set; }
 
+        [Required , MaxLength(250)]
+        public string Description { get; set; }
+
         public decimal Price { get; set; }
 
         public virtual ICollection<Sale> Sales { get; set; }
