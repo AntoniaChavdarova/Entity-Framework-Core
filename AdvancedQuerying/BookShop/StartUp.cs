@@ -17,8 +17,7 @@
             // DbInitializer.ResetDatabase(db);
 
            
-            Console.WriteLine(RemoveBooks(db));
-
+          
 
         }
 
