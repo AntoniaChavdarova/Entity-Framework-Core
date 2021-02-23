@@ -7,7 +7,7 @@ using System.Reflection;
 namespace MiniORM
 {
     internal class ChangeTracker<T>
-       where T : class, new()
+        where T : class, new()
     {
         private readonly List<T> allEntitiies;
 
@@ -118,5 +118,5 @@ namespace MiniORM
             return primaryKeys
                 .Select(pk => pk.GetValue(proxyEntity));
         }
-
     }
+}
