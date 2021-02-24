@@ -234,13 +234,13 @@ namespace MiniORM
             foreach (var dbset in this.dbSetProperties)
             {
                 Type dbSetType = dbset.Key;
-                PropertyInfo dbSetPropery = dbset.Value;
+                PropertyInfo dbSetProperty = dbset.Value;
 
                 var populatedDbSetGeneric = typeof(DbContext)
                     .GetMethod("PopulateDbSet", BindingFlags.Instance | BindingFlags.NonPublic)
                     .MakeGenericMethod(dbSetType);
 
-                populatedDbSetGeneric.Invoke(this, new object[] { dbSetPropery });
+                populatedDbSetGeneric.Invoke(this, new object[] { dbSetProperty });
             }
         }
 

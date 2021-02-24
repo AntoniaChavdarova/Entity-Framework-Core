@@ -21,6 +21,8 @@ namespace MiniORM.App.Data
 
         public DbSet<EmployeeProject> EmployeeProjects { get; set; }
 
+       
+
 
     }
 }

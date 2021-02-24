@@ -7,10 +7,10 @@ namespace MiniORM.App.Data.Entities
 {
     public class Department
     {
-        //public Department()
-        //{
-        //    this.Employees = new HashSet<Employee>();
-        //}
+        public Department()
+        {
+            this.Employees = new HashSet<Employee>();
+        }
 
         [Key]
         public int Id { get; set; }
