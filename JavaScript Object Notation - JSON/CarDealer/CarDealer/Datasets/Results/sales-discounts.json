@@ -1,0 +1,112 @@
+[
+  {
+    "car": {
+      "Make": "Seat",
+      "Model": "Mii",
+      "TravelledDistance": 473519569
+    },
+    "customerName": "Ann Mcenaney",
+    "Discount": 30.00,
+    "Price": 93.99,
+    "priceWithDiscount": 65.79
+  },
+  {
+    "car": {
+      "Make": "Renault",
+      "Model": "Alaskan",
+      "TravelledDistance": 303853081
+    },
+    "customerName": "Taina Achenbach",
+    "Discount": 10.00,
+    "Price": 100.29,
+    "priceWithDiscount": 90.26
+  },
+  {
+    "car": {
+      "Make": "Toyota",
+      "Model": "Prius",
+      "TravelledDistance": 141313729
+    },
+    "customerName": "Francis Mckim",
+    "Discount": 30.00,
+    "Price": 100.99,
+    "priceWithDiscount": 70.69
+  },
+  {
+    "car": {
+      "Make": "Peugeot",
+      "Model": "405",
+      "TravelledDistance": 428581244
+    },
+    "customerName": "Donnetta Soliz",
+    "Discount": 15.00,
+    "Price": 100.99,
+    "priceWithDiscount": 85.84
+  },
+  {
+    "car": {
+      "Make": "Citroen",
+      "Model": "C3",
+      "TravelledDistance": 486926519
+    },
+    "customerName": "Hipolito Lamoreaux",
+    "Discount": 15.00,
+    "Price": 162.99,
+    "priceWithDiscount": 138.54
+  },
+  {
+    "car": {
+      "Make": "Alfa Romeo",
+      "Model": "Giulietta",
+      "TravelledDistance": 128074332
+    },
+    "customerName": "Johnette Derryberry",
+    "Discount": 0.00,
+    "Price": 120.99,
+    "priceWithDiscount": 120.99
+  },
+  {
+    "car": {
+      "Make": "Peugeot",
+      "Model": "407",
+      "TravelledDistance": 336906707
+    },
+    "customerName": "Brett Brickley",
+    "Discount": 30.00,
+    "Price": 100.99,
+    "priceWithDiscount": 70.69
+  },
+  {
+    "car": {
+      "Make": "Seat",
+      "Model": "Ibiza",
+      "TravelledDistance": 390958489
+    },
+    "customerName": "Nisha Markwell",
+    "Discount": 30.00,
+    "Price": 44.99,
+    "priceWithDiscount": 31.49
+  },
+  {
+    "car": {
+      "Make": "Citroen",
+      "Model": "C1",
+      "TravelledDistance": 339260713
+    },
+    "customerName": "Brett Brickley",
+    "Discount": 30.00,
+    "Price": 120.99,
+    "priceWithDiscount": 84.69
+  },
+  {
+    "car": {
+      "Make": "Nissan",
+      "Model": "Altima",
+      "TravelledDistance": 407562858
+    },
+    "customerName": "Emmitt Benally",
+    "Discount": 10.00,
+    "Price": 82.99,
+    "priceWithDiscount": 74.69
+  }
+]
