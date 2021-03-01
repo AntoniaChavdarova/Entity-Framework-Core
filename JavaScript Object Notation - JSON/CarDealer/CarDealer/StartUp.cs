@@ -20,9 +20,10 @@ namespace CarDealer
 
             //string inputJson = File.ReadAllText("../../../Datasets/sales.json");
 
-            // Console.WriteLine(ImportSales(db, inputJson) ); 
+            //Console.WriteLine(ImportSales(db, inputJson) ); 
 
-            
+
+
             string json = GetSalesWithAppliedDiscount(db);
 
             EnsureDirectoryExists();
@@ -48,7 +49,7 @@ namespace CarDealer
                
                     customerName = x.Customer.Name,
                     Discount = x.Discount,
-                    Price = x.Car.PartCars.Sum(y => y.Part.Price),
+                    price = x.Car.PartCars.Sum(y => y.Part.Price),
                     priceWithDiscount = x.Car.PartCars.Sum(pc => pc.Part.Price) -
                                             x.Car.PartCars.Sum(pc => pc.Part.Price) * x.Discount / 100
 
@@ -195,6 +196,14 @@ namespace CarDealer
         public static string ImportCars(CarDealerContext context, string inputJson)
         {
             Car[] cars = JsonConvert.DeserializeObject<Car[]>(inputJson);
+
+    
+            //var c = cars.Select(x => context.PartCars.Add(new PartCar()
+
+            //{
+            //    CarId = x.Id,
+            //    PartId = x.P
+            //)}
 
             context.Cars.AddRange(cars);
             context.SaveChanges();

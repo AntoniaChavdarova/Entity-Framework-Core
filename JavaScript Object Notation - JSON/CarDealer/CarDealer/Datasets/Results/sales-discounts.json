@@ -7,7 +7,7 @@
     },
     "customerName": "Ann Mcenaney",
     "Discount": 30.00,
-    "Price": 93.99,
+    "price": 93.99,
     "priceWithDiscount": 65.79
   },
   {
@@ -18,7 +18,7 @@
     },
     "customerName": "Taina Achenbach",
     "Discount": 10.00,
-    "Price": 100.29,
+    "price": 100.29,
     "priceWithDiscount": 90.26
   },
   {
@@ -29,7 +29,7 @@
     },
     "customerName": "Francis Mckim",
     "Discount": 30.00,
-    "Price": 100.99,
+    "price": 100.99,
     "priceWithDiscount": 70.69
   },
   {
@@ -40,7 +40,7 @@
     },
     "customerName": "Donnetta Soliz",
     "Discount": 15.00,
-    "Price": 100.99,
+    "price": 100.99,
     "priceWithDiscount": 85.84
   },
   {
@@ -51,7 +51,7 @@
     },
     "customerName": "Hipolito Lamoreaux",
     "Discount": 15.00,
-    "Price": 162.99,
+    "price": 162.99,
     "priceWithDiscount": 138.54
   },
   {
@@ -62,7 +62,7 @@
     },
     "customerName": "Johnette Derryberry",
     "Discount": 0.00,
-    "Price": 120.99,
+    "price": 120.99,
     "priceWithDiscount": 120.99
   },
   {
@@ -73,7 +73,7 @@
     },
     "customerName": "Brett Brickley",
     "Discount": 30.00,
-    "Price": 100.99,
+    "price": 100.99,
     "priceWithDiscount": 70.69
   },
   {
@@ -84,7 +84,7 @@
     },
     "customerName": "Nisha Markwell",
     "Discount": 30.00,
-    "Price": 44.99,
+    "price": 44.99,
     "priceWithDiscount": 31.49
   },
   {
@@ -95,7 +95,7 @@
     },
     "customerName": "Brett Brickley",
     "Discount": 30.00,
-    "Price": 120.99,
+    "price": 120.99,
     "priceWithDiscount": 84.69
   },
   {
@@ -106,7 +106,7 @@
     },
     "customerName": "Emmitt Benally",
     "Discount": 10.00,
-    "Price": 82.99,
+    "price": 82.99,
     "priceWithDiscount": 74.69
   }
 ]
