@@ -35,7 +35,7 @@ namespace CarDealer
            string res = GetSalesWithAppliedDiscount(db);
            File.WriteAllText("../../../Results/sales-discounts.xml", res);
 
-
+          
 
 
         }
