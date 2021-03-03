@@ -9,10 +9,10 @@ using System.Text;
 
 namespace RealEstates.Services
 {
-    public class PropertiesServices : IPropertiesServices
+    public class PropertiesService : IPropertiesService
     {
         private RealEstateDbContext db;
-        public PropertiesServices(RealEstateDbContext db)
+        public PropertiesService(RealEstateDbContext db)
         {
             this.db = db;
         }

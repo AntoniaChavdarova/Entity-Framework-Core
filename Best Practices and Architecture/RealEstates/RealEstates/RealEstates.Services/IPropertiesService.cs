@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RealEstates.Services
 {
-    public interface IPropertiesServices
+    public interface IPropertiesService
     {
         void Create(string district, int price, int size, int? year, string buildingType, string propertyType, int? floor, int? maxFloor);
 

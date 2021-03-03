@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RealEstates.Services
 {
-    public interface IDistrictServices
+    public interface IDistrictsService
     {
         IEnumerable<DistrictViewModel> GetTopDistrictsByAveragePrice(int count = 10);
 

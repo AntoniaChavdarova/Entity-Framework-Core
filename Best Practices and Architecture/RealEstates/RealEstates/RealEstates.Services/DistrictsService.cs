@@ -9,10 +9,10 @@ using System.Text;
 
 namespace RealEstates.Services
 {
-    public class DistrictServices : IDistrictServices
+    public class DistrictsService : IDistrictsService
     {
         private readonly RealEstateDbContext db;
-        public DistrictServices(RealEstateDbContext db)
+        public DistrictsService(RealEstateDbContext db)
         {
             this.db = db;
         }

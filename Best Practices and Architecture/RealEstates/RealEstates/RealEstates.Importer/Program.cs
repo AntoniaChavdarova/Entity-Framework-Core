@@ -15,7 +15,7 @@ namespace RealEstates.Importer
             var json = File.ReadAllText("imot.bg-raw-data-2020-07-23.json");
             var properties = JsonSerializer.Deserialize<IEnumerable<JsonProperty>>(json);
             var db = new RealEstateDbContext();
-            IPropertiesServices propertiesService = new PropertiesServices(db);
+            IPropertiesService propertiesService = new PropertiesService(db);
 
             foreach (var property in properties.Where(x => x.Price > 1000))
             {
