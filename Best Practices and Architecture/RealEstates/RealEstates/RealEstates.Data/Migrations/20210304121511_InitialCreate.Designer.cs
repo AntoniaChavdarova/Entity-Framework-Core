@@ -10,7 +10,7 @@ using RealEstates.Data;
 namespace RealEstates.Data.Migrations
 {
     [DbContext(typeof(RealEstateDbContext))]
-    [Migration("20210302203744_InitialCreate")]
+    [Migration("20210304121511_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,9 +85,6 @@ namespace RealEstates.Data.Migrations
                     b.Property<int?>("Floor")
                         .HasColumnType("int");
 
-                    b.Property<int?>("FloorMaxNumber")
-                        .HasColumnType("int");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
@@ -95,6 +92,9 @@ namespace RealEstates.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Size")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TotalNumberOfFloors")
                         .HasColumnType("int");
 
                     b.Property<int?>("Year")

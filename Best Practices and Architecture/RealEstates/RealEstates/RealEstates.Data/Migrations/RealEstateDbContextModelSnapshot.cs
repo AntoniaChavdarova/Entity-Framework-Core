@@ -83,9 +83,6 @@ namespace RealEstates.Data.Migrations
                     b.Property<int?>("Floor")
                         .HasColumnType("int");
 
-                    b.Property<int?>("FloorMaxNumber")
-                        .HasColumnType("int");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
@@ -93,6 +90,9 @@ namespace RealEstates.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Size")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TotalNumberOfFloors")
                         .HasColumnType("int");
 
                     b.Property<int?>("Year")

@@ -12,6 +12,8 @@ namespace RealEstates.Importer
     {
         static void Main(string[] args)
         {
+          
+
             var json = File.ReadAllText("imot.bg-raw-data-2020-07-23.json");
             var properties = JsonSerializer.Deserialize<IEnumerable<JsonProperty>>(json);
             var db = new RealEstateDbContext();

@@ -67,11 +67,11 @@ namespace RealEstates.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Size = table.Column<int>(type: "int", nullable: false),
                     Floor = table.Column<int>(type: "int", nullable: true),
-                    FloorMaxNumber = table.Column<int>(type: "int", nullable: true),
+                    TotalNumberOfFloors = table.Column<int>(type: "int", nullable: true),
                     DistrictId = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: true),
-                    BuildingTypeId = table.Column<int>(type: "int", nullable: false),
                     PropertyTypeId = table.Column<int>(type: "int", nullable: false),
+                    BuildingTypeId = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

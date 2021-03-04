@@ -18,14 +18,15 @@ namespace RealEstates.Data
         {
 
         }
-
-        public DbSet<BuildingType> BuildingTypes { get; set; }
+        public DbSet<RealEstateProperty> RealEstateProperties { get; set; }
 
         public DbSet<District> Districts { get; set; }
 
+        public DbSet<BuildingType> BuildingTypes { get; set; }
+
+
         public DbSet<PropertyType> PropertyTypes { get; set; }
 
-        public DbSet<RealEstateProperty> RealEstateProperties { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
 

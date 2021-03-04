@@ -11,13 +11,13 @@ namespace RealEstates.Services
 {
     public class PropertiesService : IPropertiesService
     {
-        private RealEstateDbContext db;
+        private readonly RealEstateDbContext db;
         public PropertiesService(RealEstateDbContext db)
         {
             this.db = db;
         }
 
-        public void Create(string district, int price, int size, int? year, string buildingType, string propertyType, int? floor, int? maxFloor)
+        public void Create(string district, int size, int? year, int price, string propertyType, string buildingType, int? floor, int? maxFloor)
         {
             if (district == null)
             {
@@ -30,7 +30,7 @@ namespace RealEstates.Services
                 Price = price,
                 Year = year < 1800 ? null : year,
                 Floor = floor <= 0 ? null : floor,
-                FloorMaxNumber = maxFloor <= 0 ? null : maxFloor
+                TotalNumberOfFloors = maxFloor <= 0 ? null : maxFloor
             };
 
             //District
@@ -67,10 +67,10 @@ namespace RealEstates.Services
             this.UpdateTags(property.Id);
         }
 
-        public IEnumerable<PropertyViewModel> Search(int minPrice, int maxPrice, int minSize, int maxSize)
+        public IEnumerable<PropertyViewModel> Search(int minYear, int maxYear, int minSize, int maxSize)
         {
             return db.RealEstateProperties
-                .Where(x => x.Size > minSize && x.Size < maxSize && x.Price > minSize && x.Price < maxSize)
+                .Where(x => x.Size >= minSize && x.Size <= maxSize && x.Year >= minYear && x.Year <= maxYear)
                 .Select(MapToPropertViewModel())
                 .OrderBy(x => x.Price)
                 .ToList();
@@ -80,7 +80,7 @@ namespace RealEstates.Services
         public IEnumerable<PropertyViewModel> SearchByPrice(int minPrice, int maxPrice)
         {
            return db.RealEstateProperties
-                .Where(x => x.Price > minPrice && x.Price < maxPrice)
+                .Where(x => x.Price >= minPrice && x.Price <= maxPrice)
                 .Select(MapToPropertViewModel())
                  .OrderBy(x => x.Price)
                 .ToList();
@@ -119,7 +119,7 @@ namespace RealEstates.Services
                     });
             }
 
-            if (property.Year > 2018 && property.FloorMaxNumber > 5)
+            if (property.Year > 2018 && property.TotalNumberOfFloors > 5)
             {
                 property.Tags.Add(
                     new RealEstatePropertyTag
@@ -128,7 +128,7 @@ namespace RealEstates.Services
                     });
             }
 
-            if (property.Floor == property.FloorMaxNumber)
+            if (property.Floor == property.TotalNumberOfFloors)
             {
                 property.Tags.Add(
                     new RealEstatePropertyTag
@@ -166,17 +166,20 @@ namespace RealEstates.Services
         {
             return x => new PropertyViewModel
             {
-                District = x.District.Name,
-                BuildingType = x.BuildingType.Name,
-                Floor = (x.Floor ?? 0).ToString()
-                                   + "/"
-                                   + (x.FloorMaxNumber ?? 0),
-                Price = x.Price,
-                Size = x.Size,
-                Year = x.Year,
-                PropertyType = x.PropertyType.Name
+               Price = x.Price,
+               Floor = (x.Floor ?? 0).ToString()
+               + "/"
+               + (x.TotalNumberOfFloors ?? 0),
+               Size = x.Size,
+               Year = x.Year,
+               BuildingType = x.BuildingType.Name,
+               District = x.District.Name,
+               PropertyType = x.PropertyType.Name,
 
             };
         }
+
+       
+       
     }
 }
