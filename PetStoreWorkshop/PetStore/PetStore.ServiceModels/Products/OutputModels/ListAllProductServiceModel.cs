@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PetStore.ServiceModels.Products.OutputModels
 {
-    class ListAllProductServiceModel
+    public class ListAllProductServiceModel
     {
         public string Name { get; set; }
 

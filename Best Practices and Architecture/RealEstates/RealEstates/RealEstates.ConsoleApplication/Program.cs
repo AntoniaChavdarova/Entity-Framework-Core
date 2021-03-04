@@ -13,48 +13,35 @@ namespace RealEstates.ConsoleApplication
             Console.OutputEncoding = Encoding.UTF8;
 
             var db = new RealEstateDbContext();
-            db.Database.EnsureCreated();
            
-          // db.Database.Migrate();
+            //db.Database.Migrate();
 
-          //  IPropertiesService propertiesService = new PropertiesService(db);
-
-           // propertiesService.Create("Vitosha", 200, 1998, 200000, "3 - staen", "tuxla", 6, 12);
-
-            //IPropertiesService propertiesService = new PropertiesService(db);
-
-            //var properties = propertiesService.Search(50000, 100000, 20, 200);
+            IPropertiesService propertiesService = new PropertiesService(db);
 
 
-            //foreach (var prop in properties)
-            //{
-            //    Console.WriteLine(prop.District, prop.Price);
-            //}
+            Console.Write("Min price: ");
+            int minPrice = int.Parse(Console.ReadLine());
+            Console.Write("Max price: ");
+            int maxPrice = int.Parse(Console.ReadLine());
+            var properties = propertiesService.SearchByPrice(minPrice, maxPrice);
+            ;
 
-            //Console.Write("Min price: ");
-            //int minPrice = int.Parse(Console.ReadLine());
-            //Console.Write("Max price: ");
-            //int maxPrice = int.Parse(Console.ReadLine());
-            //var properties = propertiesService.SearchByPrice(minPrice, maxPrice);
-            //;
+            foreach (var property in properties)
+            {
+                Console.WriteLine($"{property.District}, fl. {property.Floor}, {property.Size} m², {property.Year}, {property.Price}€, {property.PropertyType}, {property.BuildingType}");
+            }
 
-            //foreach (var property in properties)
-            //{
-            //    Console.WriteLine($"{property.District}, fl. {property.Floor}, {property.Size} m², {property.Year}, {property.Price}€, {property.PropertyType}, {property.BuildingType}");
-            //}
+            Console.WriteLine(new string('-', 60));
 
-            // Console.WriteLine(new string('-', 60));
-
-            //IDistrictsService districtsService = new DistrictsService(db);
-            //var districts = districtsService.GetTopDistrictsByAveragePrice(100);
-            //foreach (var district in districts)
-            //{
-            //    Console.WriteLine($"{district.Name} => Price: {district.AveragePrice:0.00} ({district.MinPrice}-{district.MaxPrice}) => {district.PropertiesCount} properties");
-            //}
+            IDistrictsService districtsService = new DistrictsService(db);
+            var districts = districtsService.GetTopDistrictsByAveragePrice(100);
+            foreach (var district in districts)
+            {
+                Console.WriteLine($"{district.Name} => Price: {district.AveragePrice:0.00} ({district.MinPrice}-{district.MaxPrice}) => {district.PropertiesCount} properties");
+            }
 
 
 
         }
     }
 }
-
