@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetStore.Models\PetStore.Models.csproj" />
+    <ProjectReference Include="..\PetStore.ServiceModels\PetStore.ServiceModels.csproj" />
+  </ItemGroup>
+
 </Project>
