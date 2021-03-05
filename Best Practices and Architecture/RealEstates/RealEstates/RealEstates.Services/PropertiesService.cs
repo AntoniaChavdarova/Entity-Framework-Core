@@ -86,6 +86,8 @@ namespace RealEstates.Services
                 .ToList();
         }
 
+      
+
         public void UpdateTags(int propertyId)
         {
             var property = db.RealEstateProperties.FirstOrDefault(x => x.Id == propertyId);
@@ -179,7 +181,7 @@ namespace RealEstates.Services
             };
         }
 
-       
-       
+     
+
     }
 }
