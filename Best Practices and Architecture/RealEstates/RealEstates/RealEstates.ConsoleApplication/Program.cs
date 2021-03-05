@@ -14,7 +14,7 @@ namespace RealEstates.ConsoleApplication
 
             var db = new RealEstateDbContext();
            
-            //db.Database.Migrate();
+            db.Database.Migrate();
 
             IPropertiesService propertiesService = new PropertiesService(db);
 

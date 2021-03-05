@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstates.Data", "RealEstates.Data\RealEstates.Data.csproj", "{22B02635-0BEC-4499-9D6F-8D1FBFEA9A09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstates.Data", "RealEstates.Data\RealEstates.Data.csproj", "{22B02635-0BEC-4499-9D6F-8D1FBFEA9A09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstates.Models", "RealEstates.Models\RealEstates.Models.csproj", "{83EB2C81-3E98-422F-AAEB-17A6E0989BD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstates.Models", "RealEstates.Models\RealEstates.Models.csproj", "{83EB2C81-3E98-422F-AAEB-17A6E0989BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstates.Services", "RealEstates.Services\RealEstates.Services.csproj", "{3AEA044A-974B-4A83-BB1E-559FE3308AF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstates.Services", "RealEstates.Services\RealEstates.Services.csproj", "{3AEA044A-974B-4A83-BB1E-559FE3308AF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstates.Importer", "RealEstates.Importer\RealEstates.Importer.csproj", "{F68E00D3-3BCE-4C93-BF13-F9CA30F892EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstates.Importer", "RealEstates.Importer\RealEstates.Importer.csproj", "{F68E00D3-3BCE-4C93-BF13-F9CA30F892EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstates.ConsoleApplication", "RealEstates.ConsoleApplication\RealEstates.ConsoleApplication.csproj", "{0BB6DDB9-C113-41BF-ACE8-C0B5C7B0B89F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstates.ConsoleApplication", "RealEstates.ConsoleApplication\RealEstates.ConsoleApplication.csproj", "{0BB6DDB9-C113-41BF-ACE8-C0B5C7B0B89F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstates.Web", "RealEstates.Web\RealEstates.Web.csproj", "{ACCF7C4A-45B9-4950-970A-87D3ED86D4B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0BB6DDB9-C113-41BF-ACE8-C0B5C7B0B89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BB6DDB9-C113-41BF-ACE8-C0B5C7B0B89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BB6DDB9-C113-41BF-ACE8-C0B5C7B0B89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACCF7C4A-45B9-4950-970A-87D3ED86D4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACCF7C4A-45B9-4950-970A-87D3ED86D4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACCF7C4A-45B9-4950-970A-87D3ED86D4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACCF7C4A-45B9-4950-970A-87D3ED86D4B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using PetStore.Common;
+using PetStore.Data;
+using PetStore.Models;
 using PetStore.ServiceModels.Products.InputModels;
 using PetStore.ServiceModels.Products.OutputModels;
 using PetStore.Services.Interfaces;
@@ -11,16 +14,63 @@ namespace PetStore.Services
     public class ProductService : IProductService
     {
         private readonly IMapper mapper;
+        private readonly PetStoreDbContext db;
 
+        public ProductService(PetStoreDbContext db, IMapper mapper)
+        {
+            this.db = db;
+            this.mapper = mapper;
+        }
 
         public void AddProduct(AddProductInputServiceModel model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Product product = this.mapper.Map<Product>(model);
+
+                this.db.Products.Add(product);
+                this.db.SaveChanges();
+
+
+            }
+            catch (Exception)
+            {
+
+                throw new ArgumentException(ExceptionMessages.InvalidProductType);
+            }
         }
 
-        public void EditProduct(string id, EditProductInputServiceModel )
+        public void EditProduct(string id, EditProductInputServiceModel model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Product product = this.mapper.Map<Product>(model);
+
+                Product productToUpdate = this.db
+                    .Products
+                    .Find(id);
+
+                if(productToUpdate == null)
+                {
+                    throw new ArgumentException(ExceptionMessages.ProductNotFound);
+                }
+
+                productToUpdate.Name = product.Name;
+                productToUpdate.ProductType = product.ProductType;
+                productToUpdate.Price = product.Price;
+
+                this.db.SaveChanges();
+
+            }
+            catch (ArgumentException ae)
+            {
+
+                throw ae;
+            }
+            catch (Exception)
+            {
+                throw new ArgumentException(ExceptionMessages.InvalidProductType);
+            }
         }
 
         public ICollection<ListAllProductServiceModel> GetAll()
@@ -35,7 +85,21 @@ namespace PetStore.Services
 
         public bool RemoveById(string id)
         {
-            throw new NotImplementedException();
+            Product productToRemove = this.db
+                .Products
+                .Find(id);
+
+            if(productToRemove == null)
+            {
+                throw new ArgumentException(ExceptionMessages.ProductNotFound);
+            }
+
+            this.db.Products.Remove(productToRemove);
+            int rowAffected = this.db.SaveChanges();
+
+            bool wasDeleted = rowAffected == 1;
+
+            return wasDeleted;
         }
 
         public bool RemoveByName(string name)
