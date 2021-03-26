@@ -1,112 +1,101 @@
 [
   {
     "car": {
-      "Make": "Seat",
-      "Model": "Mii",
-      "TravelledDistance": 473519569
-    },
-    "customerName": "Ann Mcenaney",
-    "Discount": 30.00,
-    "price": 93.99,
-    "priceWithDiscount": 65.79
-  },
-  {
-    "car": {
-      "Make": "Renault",
-      "Model": "Alaskan",
-      "TravelledDistance": 303853081
-    },
-    "customerName": "Taina Achenbach",
-    "Discount": 10.00,
-    "price": 100.29,
-    "priceWithDiscount": 90.26
-  },
-  {
-    "car": {
-      "Make": "Toyota",
-      "Model": "Prius",
-      "TravelledDistance": 141313729
-    },
-    "customerName": "Francis Mckim",
-    "Discount": 30.00,
-    "price": 100.99,
-    "priceWithDiscount": 70.69
-  },
-  {
-    "car": {
-      "Make": "Peugeot",
-      "Model": "405",
-      "TravelledDistance": 428581244
-    },
-    "customerName": "Donnetta Soliz",
-    "Discount": 15.00,
-    "price": 100.99,
-    "priceWithDiscount": 85.84
-  },
-  {
-    "car": {
-      "Make": "Citroen",
-      "Model": "C3",
-      "TravelledDistance": 486926519
+      "Make": "BMW",
+      "Model": "M5 F10",
+      "TravelledDistance": 435603343
     },
     "customerName": "Hipolito Lamoreaux",
-    "Discount": 15.00,
-    "price": 162.99,
-    "priceWithDiscount": 138.54
+    "Discount": "30.00",
+    "price": "2544.67",
+    "priceWithDiscount": "1781.27"
   },
   {
     "car": {
-      "Make": "Alfa Romeo",
-      "Model": "Giulietta",
-      "TravelledDistance": 128074332
+      "Make": "Opel",
+      "Model": "Omega",
+      "TravelledDistance": 111313670
     },
-    "customerName": "Johnette Derryberry",
-    "Discount": 0.00,
-    "price": 120.99,
-    "priceWithDiscount": 120.99
+    "customerName": "Garret Capron",
+    "Discount": "0.00",
+    "price": "1197.55",
+    "priceWithDiscount": "1197.55"
   },
   {
     "car": {
-      "Make": "Peugeot",
-      "Model": "407",
-      "TravelledDistance": 336906707
-    },
-    "customerName": "Brett Brickley",
-    "Discount": 30.00,
-    "price": 100.99,
-    "priceWithDiscount": 70.69
-  },
-  {
-    "car": {
-      "Make": "Seat",
-      "Model": "Ibiza",
-      "TravelledDistance": 390958489
-    },
-    "customerName": "Nisha Markwell",
-    "Discount": 30.00,
-    "price": 44.99,
-    "priceWithDiscount": 31.49
-  },
-  {
-    "car": {
-      "Make": "Citroen",
-      "Model": "C1",
-      "TravelledDistance": 339260713
-    },
-    "customerName": "Brett Brickley",
-    "Discount": 30.00,
-    "price": 120.99,
-    "priceWithDiscount": 84.69
-  },
-  {
-    "car": {
-      "Make": "Nissan",
-      "Model": "Altima",
-      "TravelledDistance": 407562858
+      "Make": "Opel",
+      "Model": "Astra",
+      "TravelledDistance": 516628215
     },
     "customerName": "Emmitt Benally",
-    "Discount": 10.00,
-    "price": 82.99,
-    "priceWithDiscount": 74.69
+    "Discount": "10.00",
+    "price": "1284.32",
+    "priceWithDiscount": "1155.89"
+  },
+  {
+    "car": {
+      "Make": "BMW",
+      "Model": "F25",
+      "TravelledDistance": 476132712
+    },
+    "customerName": "Sylvie Mcelravy",
+    "Discount": "0.00",
+    "price": "489.20",
+    "priceWithDiscount": "489.20"
+  },
+  {
+    "car": {
+      "Make": "BMW",
+      "Model": "F04",
+      "TravelledDistance": 443756363
+    },
+    "customerName": "Marcelle Griego",
+    "Discount": "50.00",
+    "price": "1655.57",
+    "priceWithDiscount": "827.79"
+  },
+  {
+    "car": {
+      "Make": "Opel",
+      "Model": "Vectra",
+      "TravelledDistance": 433351992
+    },
+    "customerName": "Cinthia Lasala",
+    "Discount": "30.00",
+    "price": "1223.31",
+    "priceWithDiscount": "856.32"
+  },
+  {
+    "car": {
+      "Make": "Opel",
+      "Model": "Insignia",
+      "TravelledDistance": 168539389
+    },
+    "customerName": "Donnetta Soliz",
+    "Discount": "15.00",
+    "price": "619.66",
+    "priceWithDiscount": "526.71"
+  },
+  {
+    "car": {
+      "Make": "Opel",
+      "Model": "Omega",
+      "TravelledDistance": 277250812
+    },
+    "customerName": "Teddy Hobby",
+    "Discount": "20.00",
+    "price": "1544.83",
+    "priceWithDiscount": "1235.86"
+  },
+  {
+    "car": {
+      "Make": "BMW",
+      "Model": "E67",
+      "TravelledDistance": 476830509
+    },
+    "customerName": "Johnette Derryberry",
+    "Discount": "15.00",
+    "price": "2014.83",
+    "priceWithDiscount": "1712.61"
   }
 ]
