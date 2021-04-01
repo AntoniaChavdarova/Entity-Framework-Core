@@ -34,34 +34,30 @@
             var list = new List<Project>();
 
             foreach (var projectDto in projectsDtos)
-            {
-                
+            { 
                 if (!IsValid(projectDto))
                 {
                     sb.AppendLine(ErrorMessage);
                     continue;
                 }
               
-              var IsValiddateDue = DateTime.TryParseExact(projectDto.DueDate, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dueDate);
+              var isValiddateDue = DateTime.TryParseExact(projectDto.DueDate, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dueDate);
               var dateOpen = DateTime.ParseExact(projectDto.OpenDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 
                     var project = new Project
                 {
                     Name = projectDto.Name,
                     OpenDate = dateOpen,
-                    DueDate = IsValiddateDue ? (DateTime?)dueDate : null,
-                   
+                    DueDate = isValiddateDue ? (DateTime?)dueDate : null,  
                 };
 
                 foreach (var taskDto in projectDto.Tasks)
                 {
-
                     if (!IsValid(taskDto))
                     {
                         sb.AppendLine(ErrorMessage);
 
                         continue;
-
                     }
 
                     Task task = new Task
@@ -71,11 +67,9 @@
                         DueDate = DateTime.ParseExact(taskDto.DueDate, "dd/MM/yyyy", CultureInfo.InvariantCulture),
                         ExecutionType = Enum.Parse<ExecutionType>(taskDto.ExecutionType),
                         LabelType = Enum.Parse<LabelType>(taskDto.LabelType),
-
                     };
 
-
-                    //task open date is before project open date
+                    // task open date is before project open date
                         if (project.OpenDate > task.OpenDate)
                         {
                             sb.AppendLine(ErrorMessage);
@@ -94,9 +88,8 @@
                     project.Tasks.Add(task);
                 }
                
-
                 list.Add(project);
-                sb.AppendLine(String.Format(SuccessfullyImportedProject , project.Name , project.Tasks.Count));
+                sb.AppendLine(String.Format(SuccessfullyImportedProject, project.Name, project.Tasks.Count));
             }
 
             context.AddRange(list);
@@ -143,6 +136,7 @@
                         Task = task
                     });
                 }
+
                 list.Add(employee);
                 sb.AppendLine(string.Format(SuccessfullyImportedEmployee, employee.Username,
                     employee.EmployeesTasks.Count));
