@@ -1,6 +1,7 @@
 ﻿namespace VaporStore.DataProcessor
 {
 	using System;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -23,7 +24,7 @@
 			//				Order the games by player count(descending), then by game id(ascending).
 			//Order the genres by total player count(descending), then by genre id(ascending)
 
-			var genres = context.Genres.Where(x => genreNames.Contains(x.Name) && x.Games.All(a => a.Purchases.Count > 0))
+			var genres = context.Genres.ToList().Where(x => genreNames.Contains(x.Name))
 					.Select(y => new
 					{
 						Id = y.Id,
@@ -33,9 +34,11 @@
 							Id = x.Id,
 							Title = x.Name,
 							Developer = x.Developer.Name,
-							Tags = String.Join(" " , x.GameTags.Select(x => x.Tag.Name)),
-							Players = x.GameTags.Count
-						}).OrderByDescending(x => x.Players).ThenBy(x => x.Id).ToArray()
+							Tags = String.Join(", " , x.GameTags.Select(x => x.Tag.Name)),
+							Players = x.Purchases.Count,
+						}).Where(g => g.Players > 0)
+						.OrderByDescending(x => x.Players).ThenBy(x => x.Id).ToArray(),
+						TotalPlayers = y.Games.Sum(x => x.Purchases.Count)
 					}).ToArray().OrderByDescending(x => x.Games.Sum(y => y.Players)).ThenBy(x => x.Id).ToArray();
 
 			string res = JsonConvert.SerializeObject(genres, Newtonsoft.Json.Formatting.Indented);
@@ -45,7 +48,6 @@
 		public static string ExportUserPurchasesByType(VaporStoreDbContext context, string storeType)
 		{
 
-			//	which receives a purchase type as a string.
 			//	Export all users who have any purchases. 
 			//	For each user, export their username, purchases for that purchase type
 			//	and total money spent for that purchase type.
@@ -56,18 +58,33 @@
 			//		then by username(ascending).For each user, order the purchases by date(ascending).
 			//		Do not export users, who don’t have any purchases.
 
-			PurchaseType purchaseTypeEnum = Enum.Parse<PurchaseType>(storeType);
+			var purchase = context.Users.ToList()
+				.Where(x => x.Cards.Any(c => c.Purchases.Any(p => p.Type.ToString() == storeType)))
+				.Select(x => new XmlDto
+                {
+					UserName = x.Username,
+					TotalSpent = x.Cards.Sum(x => 
+					x.Purchases.Where(a => a.Type.ToString() == storeType)
+					.Sum(a => a.Game.Price)),
+					Purchases = x.Cards.SelectMany(p => p.Purchases)
+					.Where(x => x.Type.ToString() == storeType)
+					.Select(x => new PurchasesDto
+                    {
+						Card = x.Card.Number,
+						Cvc = x.Card.Cvc,
+						Date = x.Date.ToString("yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture),
+						Game = new GameDto
+                        {
+							Genre = x.Game.Genre.Name,
+							Title = x.Game.Name,
+							Price = x.Game.Price
+                        }
 
-			//var users = context.Users.Where(x => x.Cards.Any(y => y.Purchases.Any()))
+                    }).OrderBy(x => x.Date) //zashtoto e oburnata datata 
+						.ToArray()
+				}).OrderByDescending(x => x.TotalSpent).ThenBy(x => x.UserName).ToArray();
 
-			//.Select(x => new XmlDto
-			//            {
-			//	UserName = x.Username,
-			//	Purchases = context.
-			//	Purchases.Where(p => p.Type == purchaseTypeEnum)
-
-			//            })
-			throw new Exception("Not implemented");
+			return SerializeXml(purchase, "Users");
 		}
 
 		private static string SerializeXml<T>(T[] objects, string root)
