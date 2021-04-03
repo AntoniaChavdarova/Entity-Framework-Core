@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Cinema": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
