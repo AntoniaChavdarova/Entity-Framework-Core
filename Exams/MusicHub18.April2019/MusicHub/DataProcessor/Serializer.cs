@@ -44,6 +44,7 @@
             //    by writer(ascending) and by performer(ascending).
 
             var songs = context.Songs.Where(x => x.Duration.TotalSeconds > duration)
+                .ToList()
                 .Select(x => new ExportDto()
                 {
                     SongName = x.Name,
